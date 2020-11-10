@@ -72,5 +72,10 @@
                 </MenuItem.Header>
             </MenuItem>
         </Menu>
+        <Rectangle Fill="#72FFFFFF" Margin="357,138,357,139" MinWidth="300" MinHeight="260" MaxWidth="501" MaxHeight="550" >
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" ShadowDepth="2" Color="#FFE2E2E2" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
     </Grid>
 </Window>

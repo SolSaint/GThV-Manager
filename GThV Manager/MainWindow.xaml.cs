@@ -24,8 +24,8 @@ namespace GThV_Manager
         {
             InitializeComponent();
 
-            this.MinHeight = 512;
-            this.MinWidth = 912;
+            this.MinHeight = 600;
+            this.MinWidth = 1024;
 
             Uri iconUri = new Uri("pack://application:,,,/Image/icons8_skull_crossbones.ico");
             this.Icon = BitmapFrame.Create(iconUri);
