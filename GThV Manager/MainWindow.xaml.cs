@@ -20,6 +20,9 @@ namespace GThV_Manager
     /// </summary>
     public partial class MainWindow : Window
     {
+        SolidColorBrush Off = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+        SolidColorBrush On = new SolidColorBrush(Color.FromRgb(240, 222, 45));
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +32,18 @@ namespace GThV_Manager
 
             Uri iconUri = new Uri("pack://application:,,,/Image/icons8_skull_crossbones.ico");
             this.Icon = BitmapFrame.Create(iconUri);
+        }
+
+        private void Bu_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if ( Bu.Toggled1 == true)
+            {
+                Light.Fill = On;
+            }
+            else
+            {
+                Light.Fill = Off;
+            }
         }
     }
 }
