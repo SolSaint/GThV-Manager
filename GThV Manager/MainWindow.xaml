@@ -13,12 +13,39 @@
     <Grid>
         <Image Source="Image/day.png" Stretch="UniformToFill"/>
         <Menu HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="1014">
-            <MenuItem Height="60" Width="150">
+            <MenuItem Height="60" Width="40">
+                <MenuItem.Header>
+                    <StackPanel Width="25">
+                        <Grid>
+                            <fa:FontAwesome Icon="ChevronLeft" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <fa:FontAwesome.Foreground>
+                                    <SolidColorBrush Color="#FFEBEBEB" Opacity="1"/>
+                                </fa:FontAwesome.Foreground>
+                            </fa:FontAwesome>
+                        </Grid>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Height="60" Width="40">
+                <MenuItem.Header>
+                    <StackPanel Width="25">
+                        <Grid>
+                            <fa:FontAwesome Icon="ChevronRight" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <fa:FontAwesome.Foreground>
+                                    <SolidColorBrush Color="#FFEBEBEB" Opacity="1"/>
+                                </fa:FontAwesome.Foreground>
+                            </fa:FontAwesome>
+                        </Grid>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Height="60" Width="80">
                 <MenuItem.Header>
                     <StackPanel>
-                        <Grid Height="40" Width="132">
-                            <fa:FontAwesome Icon="Home" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <ContentPresenter Content="HOME" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontWeight="Bold"/>
+                        <Grid Height="60" Width="65">
+                            <!--<fa:FontAwesome Icon="Home" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
+                            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="55" Height="55" Source="/Image/center.png" />
+                            <!--<ContentPresenter Content="GAMETHUANVIET" HorizontalAlignment="Right" VerticalAlignment="Center" TextBlock.FontWeight="Bold"/>-->
                         </Grid>
                     </StackPanel>
                 </MenuItem.Header>
@@ -27,7 +54,7 @@
                 <MenuItem.Header>
                     <StackPanel>
                         <Grid Height="40" Width="132">
-                            <fa:FontAwesome Icon="Book" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <fa:FontAwesome Icon="Globe" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                             <ContentPresenter Content="BẢN DỊCH" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontWeight="Bold"/>
                         </Grid>
                     </StackPanel>
@@ -37,7 +64,7 @@
                 <MenuItem.Header>
                     <StackPanel>
                         <Grid Height="40" Width="132">
-                            <fa:FontAwesome Icon="UserCircle" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <fa:FontAwesome Icon="Users" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                             <ContentPresenter Content="NHÓM DỊCH" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontWeight="Bold"/>
                         </Grid>
                     </StackPanel>
@@ -73,21 +100,32 @@
                 </MenuItem.Header>
             </MenuItem>
         </Menu>
-        <Rectangle Fill="#72000000" Margin="357,138,357,139" MinWidth="300" MinHeight="260" MaxWidth="501" MaxHeight="550" RadiusY="22" RadiusX="22" >
-            <Rectangle.Effect>
-                <DropShadowEffect BlurRadius="15" Direction="0" ShadowDepth="2" Color="#FFE2E2E2" RenderingBias="Quality"/>
-            </Rectangle.Effect>
-        </Rectangle>
-        <Grid Width="300" Height="260">
-            <Image Source="Image/center.png" Width="70" Height="80" Margin="0,-150,0,0"/>
-            <StackPanel VerticalAlignment="Center">
-                <TextBox materialDesign:HintAssist.Hint="EMAIL" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0,10,0" FontSize="14"/>
-                <PasswordBox materialDesign:HintAssist.Hint="MẬT KHẨU" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10,0,10,0" FontSize="14"/>
-            </StackPanel>
-            <local:ToggleButton x:Name="Bu" HorizontalAlignment="Center" Height="19" Margin="18,177,242,64" VerticalAlignment="Center" Width="40" MouseLeftButtonDown="Bu_MouseLeftButtonDown"/>
-            <Ellipse x:Name="Light" Fill="#FF0C0C0B" HorizontalAlignment="Center" Height="141" Margin="360,96,15,82" VerticalAlignment="Center" Width="142"/>
-            <TextBlock Text="Nhớ thông tin?" VerticalAlignment="Bottom" Margin="56,0,74,64" FontSize="14"/>
-            <Button Content="ĐĂNG NHẬP" Width="200" Height="40" Margin="0,180,0,0" FontWeight="Bold"/>
+        <Grid x:Name="loginPanel">
+            <Rectangle Fill="#72000000" Margin="357,138,357,139" MinWidth="300" MinHeight="260" MaxWidth="501" MaxHeight="550" RadiusY="22" RadiusX="22" >
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="0" ShadowDepth="2" Color="#FFE2E2E2" RenderingBias="Quality"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Grid Width="300" Height="260">
+                <Image Source="Image/center.png" Width="70" Height="80" Margin="0,-150,0,0"/>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBox materialDesign:HintAssist.Hint="EMAIL" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0,10,0" FontSize="14"/>
+                    <PasswordBox materialDesign:HintAssist.Hint="MẬT KHẨU" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10,0,10,0" FontSize="14"/>
+                </StackPanel>
+                <local:ToggleButton x:Name="Bu" HorizontalAlignment="Center" Height="19" Margin="18,177,242,64" VerticalAlignment="Center" Width="40" MouseLeftButtonDown="Bu_MouseLeftButtonDown"/>
+                <Ellipse x:Name="Light" Fill="#FF0C0C0B" HorizontalAlignment="Center" Height="141" Margin="360,96,15,82" VerticalAlignment="Center" Width="142"/>
+                <TextBlock Text="Nhớ thông tin?" VerticalAlignment="Bottom" Margin="56,0,74,64" FontSize="14"/>
+                <Button Content="ĐĂNG NHẬP" Width="200" Height="40" Margin="0,180,0,0" FontWeight="Bold"/>
+                <TextBlock Text="Quên mật khẩu!" VerticalAlignment="Bottom" Margin="176,0,-102,-35" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
+                <TextBlock Text="Đăng kí" VerticalAlignment="Bottom" Margin="24,0,181,-35" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
+                <fa:FontAwesome Icon="Facebook" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="23,310,0,-70" Height="20" Cursor="Hand"/>
+                <TextBlock Text="Login with Facebook" VerticalAlignment="Bottom" Margin="45,0,53,-70" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
+                <fa:FontAwesome Icon="Google" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="23,336,0,-96" Height="20" Cursor="Hand"/>
+                <TextBlock Text="Login with Google" VerticalAlignment="Bottom" Margin="45,0,53,-95" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
+            </Grid>
+        </Grid>
+        <Grid>
+            
         </Grid>
     </Grid>
 </Window>
