@@ -43,9 +43,7 @@
                 <MenuItem.Header>
                     <StackPanel>
                         <Grid Height="60" Width="65">
-                            <!--<fa:FontAwesome Icon="Home" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
                             <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="55" Height="55" Source="/Image/center.png" />
-                            <!--<ContentPresenter Content="GAMETHUANVIET" HorizontalAlignment="Right" VerticalAlignment="Center" TextBlock.FontWeight="Bold"/>-->
                         </Grid>
                     </StackPanel>
                 </MenuItem.Header>
@@ -109,23 +107,64 @@
             <Grid Width="300" Height="260">
                 <Image Source="Image/center.png" Width="70" Height="80" Margin="0,-150,0,0"/>
                 <StackPanel VerticalAlignment="Center">
-                    <TextBox materialDesign:HintAssist.Hint="EMAIL" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0,10,0" FontSize="14"/>
-                    <PasswordBox materialDesign:HintAssist.Hint="MẬT KHẨU" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10,0,10,0" FontSize="14"/>
+                    <TextBox materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,0,20,0" FontSize="14"/>
+                    <PasswordBox materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="20,0,20,0" FontSize="14"/>
                 </StackPanel>
                 <local:ToggleButton x:Name="Bu" HorizontalAlignment="Center" Height="19" Margin="18,177,242,64" VerticalAlignment="Center" Width="40" MouseLeftButtonDown="Bu_MouseLeftButtonDown"/>
                 <Ellipse x:Name="Light" Fill="#FF0C0C0B" HorizontalAlignment="Center" Height="141" Margin="360,96,15,82" VerticalAlignment="Center" Width="142"/>
                 <TextBlock Text="Nhớ thông tin?" VerticalAlignment="Bottom" Margin="56,0,74,64" FontSize="14"/>
-                <Button Content="ĐĂNG NHẬP" Width="200" Height="40" Margin="0,180,0,0" FontWeight="Bold"/>
-                <TextBlock Text="Quên mật khẩu!" VerticalAlignment="Bottom" Margin="176,0,-102,-35" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
-                <TextBlock Text="Đăng kí" VerticalAlignment="Bottom" Margin="24,0,181,-35" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
-                <fa:FontAwesome Icon="Facebook" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="23,310,0,-70" Height="20" Cursor="Hand"/>
-                <TextBlock Text="Login with Facebook" VerticalAlignment="Bottom" Margin="45,0,53,-70" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
-                <fa:FontAwesome Icon="Google" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="23,336,0,-96" Height="20" Cursor="Hand"/>
-                <TextBlock Text="Login with Google" VerticalAlignment="Bottom" Margin="45,0,53,-95" FontSize="14" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Cursor="Hand"/>
+                <Button Content="ĐĂNG NHẬP" Width="200" Height="40" Margin="0,200,0,0" FontWeight="Bold"/>
+                <TextBlock Text="Quên mật khẩu!" VerticalAlignment="Bottom" Margin="176,0,-102,-35" FontSize="14" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="#FF787878"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Text="Đăng kí" VerticalAlignment="Bottom" Margin="24,0,181,-35" FontSize="14" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="#FF787878"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <fa:FontAwesome Icon="Facebook" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="23,310,0,-70" Height="20" Foreground="#1877F2"/>
+                <TextBlock Text="Login with Facebook" VerticalAlignment="Bottom" Margin="45,0,53,-70" FontSize="14" Cursor="Hand" FontWeight="DemiBold">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="#1877F2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <fa:FontAwesome Icon="Google" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="23,336,0,-96" Height="20" Foreground="#FFFF3A3A"/>
+                <TextBlock Text="Login with Google" VerticalAlignment="Bottom" Margin="45,0,53,-95" FontSize="14" Cursor="Hand" FontWeight="DemiBold">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="#FFFF3A3A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Grid>
         </Grid>
         <Grid>
             
         </Grid>
+        <TextBlock x:Name="timezone" Text="{Binding Path=DTime}" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="20"/>
     </Grid>
 </Window>

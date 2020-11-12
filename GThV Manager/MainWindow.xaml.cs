@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,7 +24,8 @@ namespace GThV_Manager
     {
         SolidColorBrush Off = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         SolidColorBrush On = new SolidColorBrush(Color.FromRgb(240, 222, 45));
-
+        public string _DTime = "haha";
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -32,11 +35,12 @@ namespace GThV_Manager
 
             Uri iconUri = new Uri("pack://application:,,,/Image/icons8_skull_crossbones.ico");
             this.Icon = BitmapFrame.Create(iconUri);
+
         }
 
         private void Bu_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if ( Bu.Toggled1 == true)
+            if (Bu.Toggled1 == true)
             {
                 Light.Fill = On;
             }
@@ -45,5 +49,16 @@ namespace GThV_Manager
                 Light.Fill = Off;
             }
         }
+
+        public string DTime
+        {
+            get { return _DTime; }
+            set
+            {
+                _DTime = value;
+                DateATime.RSTime();
+            }
+        }
+
     }
 }
